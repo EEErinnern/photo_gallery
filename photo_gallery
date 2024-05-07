@@ -17,6 +17,8 @@ def main():
     
     st.subheader("Gallery")
     for photo in photos:
+        image_iterator = paginator("Select a sunset page", sunset_imgs)
+        indices_on_page, images_on_page = map(list, zip(*image_iterator))
         st.image(photo, caption=os.path.basename(photo), use_column_width=True)
 
 if __name__ == "__main__":
